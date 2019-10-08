@@ -1,6 +1,6 @@
 # moveit_gazebo  
 ## Introduction
-Manipulator simulation based on [MoveIt](https://moveit.ros.org/) and [Gazebo](http://gazebosim.org/).  
+Manipulator simulation based on [MoveIt](https://moveit.ros.org/), [ros_control](http://wiki.ros.org/ros_control) and [Gazebo](http://gazebosim.org/).  
 The development environment: Ubuntu16.04; ROS_Kinetic Kame; gazebo7  
 Simulation interface with rviz and gazebo:  
 ![gp7_gazebo.gif](https://raw.githubusercontent.com/foxchys/ROS_Study/master/moveit_gazebo/pictures/gp7_gazebo.gif)  
@@ -8,7 +8,7 @@ The robot used in this example is [yaskawa_motoman_gp7](https://www.motoman.com/
 The original manipulator model can be downloaded at [motoman_gp7_support](https://github.com/ros-industrial/motoman/tree/kinetic-devel/motoman_gp7_support).  
 This package contains the implementation of yaskawa_motoman_gp7 push block:  
 ![gp7_push.gif](https://raw.githubusercontent.com/foxchys/ROS_Study/master/moveit_gazebo/pictures/gp7_push.gif)  
-## Usages  
+## Usage  
 Creat a ros_workspace:  
 ```
 mkdir -p gp7gazebo_ws/src/
