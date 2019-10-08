@@ -5,8 +5,8 @@ The development environment: Ubuntu16.04; ROS_Kinetic Kame; gazebo7
 Simulation interface with rviz and gazebo:  
 ![gp7_gazebo.gif](https://raw.githubusercontent.com/foxchys/ROS_Study/master/moveit_gazebo/pictures/gp7_gazebo.gif)  
 The robot used in this example is [yaskawa_motoman_gp7](https://www.motoman.com/en-us/products/robots/industrial/assembly-handling/gp-series/gp7).  
-The original model was downloaded from [motoman_gp7_support](https://github.com/ros-industrial/motoman/tree/kinetic-devel/motoman_gp7_support).  
-This package implements the yaskawa_motoman_gp7 push block:  
+The original model can be downloaded at [motoman_gp7_support](https://github.com/ros-industrial/motoman/tree/kinetic-devel/motoman_gp7_support).  
+This package contains the implementation of yaskawa_motoman_gp7 push block:  
 ![gp7_push.gif](https://raw.githubusercontent.com/foxchys/ROS_Study/master/moveit_gazebo/pictures/gp7_push.gif)  
 ## Usages  
 Creat a ros_workspace:  
@@ -35,7 +35,7 @@ roslaunch robot_work start_robot_table_cube.launch
 That's all.  
 
 ## Postscript  
-"No p gain specified for pid" is not ERROR.For details [click](https://answers.ros.org/question/293830/what-is-the-fix-for-no-p-gain-specified-for-pid-namespace-gazebo_ros_controlpid_gainsback_right_wheel_joint-ros-melodic/).  
+"No p gain specified for pid" is not an ERROR.For details [click](https://answers.ros.org/question/293830/what-is-the-fix-for-no-p-gain-specified-for-pid-namespace-gazebo_ros_controlpid_gainsback_right_wheel_joint-ros-melodic/).  
 
 ## Reference  
 [1]http://gazebosim.org/tutorials?cat=connect_ros  
