@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: motoman_gp7_support
+    relative_path: urdf/gp7.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/motoman_gp7.srdf
+  CONFIG:
+    author_name: foxcys
+    author_email: chy_s@outlook.com
+    generated_timestamp: 1570185908

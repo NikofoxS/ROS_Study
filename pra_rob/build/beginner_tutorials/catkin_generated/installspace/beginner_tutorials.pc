@@ -1,8 +1,0 @@
-prefix=/home/s/mycode/pra_rob/install
-
-Name: beginner_tutorials
-Description: Description of beginner_tutorials
-Version: 0.0.0
-Cflags: -I/home/s/mycode/pra_rob/install/include
-Libs: -L/home/s/mycode/pra_rob/install/lib 
-Requires: roscpp rospy std_msgs message_runtime

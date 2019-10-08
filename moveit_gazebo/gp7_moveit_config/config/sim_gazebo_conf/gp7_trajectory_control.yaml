@@ -1,0 +1,23 @@
+gp7_yaskawa:
+  gp7_yaskawa_controller:
+    type: "position_controllers/JointTrajectoryController"
+    joints:
+      - joint_1_s
+      - joint_2_l
+      - joint_3_u
+      - joint_4_r
+      - joint_5_b
+      - joint_6_t
+    #if we didn't specify  PID values,gazebo_ros_control will be controled with gazebo methods.
+    #if we specified PID values,we should set the true PID values with inertial_matrix,but it is very difficlut.
+    #It is better not to put any PID in the yaml file rather than putting the wrong value. 
+    #To find suitable PID values use:http://wiki.ros.org/dynamic_reconfigure/Tutorials
+    #https://answers.ros.org/question/293830/what-is-the-fix-for-no-p-gain-specified-for-pid-namespace-gazebo_ros_controlpid_gainsback_right_wheel_joint-ros-melodic/
+
+    # gains:
+    #   joint_1_s:   {p: 40.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    #   joint_2_l:   {p: 40.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    #   joint_3_u:   {p: 40.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    #   joint_4_r:   {p: 40.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    #   joint_5_b:   {p: 40.0, i: 0.0, d: 0.1, i_clamp: 0.0}
+    #   joint_6_t:   {p: 40.0, i: 0.0, d: 0.1, i_clamp: 0.0}

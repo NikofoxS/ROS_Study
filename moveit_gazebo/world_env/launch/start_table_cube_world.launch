@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+
+  <!-- launch gazebo -->
+  <include file="$(find world_env)/launch/start_world.launch">
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+
+  <!-- Spawn table and cube into Gazebo -->
+  <node name="spawn_table" pkg="gazebo_ros" type="spawn_model" args="-file $(find world_env)/models/table.urdf -urdf -x 0.673 -y 0.041 -z 0.23 -model table_big" />
+
+  <node name="spawn_cube" pkg="gazebo_ros"  type="spawn_model" args="-file $(find world_env)/models/cube.urdf -urdf -x 1 -y 0 -z 1.41 -model cube" />
+
+</launch>

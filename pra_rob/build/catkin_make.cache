@@ -1,2 +1,0 @@
-beginner_tutorials
--DCATKIN_DEVEL_PREFIX=/home/s/mycode/pra_rob/devel -DCMAKE_INSTALL_PREFIX=/home/s/mycode/pra_rob/install -G Unix Makefiles

@@ -1,0 +1,14 @@
+<launch>
+    <!--  load the control params into the rosparam-->
+    <rosparam file="$(find gp7_moveit_config)/config/sim_gazebo_conf/gp7_gazebo_joint_states.yaml" command="load"/>
+
+    <node name="joint_controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+          output="screen" ns="/gp7_yaskawa" args="joint_state_controller" />
+
+    <!-- launch robot_state_publisher node，publish tf  -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+        <remap from="/joint_states" to="/gp7_yaskawa/joint_states" />
+    </node>
+
+</launch>

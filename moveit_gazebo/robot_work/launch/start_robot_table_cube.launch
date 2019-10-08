@@ -1,0 +1,10 @@
+<launch>
+  
+    <!-- Launch Gazebo and set robot in gazebo -->
+    <include file="$(find gp7_moveit_config)/launch/sim_gazebo/gp7_gazebo_main.launch" />
+
+    <node name="spawn_table" pkg="gazebo_ros" type="spawn_model" args="-file $(find world_env)/models/table.urdf -urdf -x 0.673 -y 0.041 -z 0.33 -R 0.0 -P 0.0 -Y 0.0 -model table_big" />
+
+    <node name="spawn_cube" pkg="gazebo_ros"  type="spawn_model" args="-file $(find world_env)/models/cube.urdf -urdf -x 0.71 -y 0 -z 1.51 -R 0.0 -P 0.0 -Y 0.0  -model cube" />
+
+</launch>

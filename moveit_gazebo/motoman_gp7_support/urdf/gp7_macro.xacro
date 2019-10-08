@@ -1,0 +1,286 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<xacro:macro name="motoman_gp7" params="prefix">
+
+    <xacro:macro name="inertial_matrix" params="mass">
+      <inertial>
+     	  <mass value="${mass}" />
+          <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0" />
+      </inertial>
+    </xacro:macro>
+
+    <!-- Properties -->
+    <material name="yaskawa_blue">
+          <color rgba="0.12941 0.14902 0.74902 1" />
+    </material>
+
+    <!-- link list -->
+    <link name="${prefix}base_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://motoman_gp7_support/meshes/visual/gp7_base_link.stl"/>
+            </geometry>
+            <material name="yaskawa_blue"/>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://motoman_gp7_support/meshes/collision/gp7_base_link.stl"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_matrix mass="0.0001"/>
+    </link>
+    <link name="${prefix}link_1_s">
+        <visual>
+            <geometry>
+                <mesh filename="package://motoman_gp7_support/meshes/visual/gp7_link_1_s.stl"/>
+            </geometry>
+            <material name="yaskawa_blue"/>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://motoman_gp7_support/meshes/collision/gp7_link_1_s.stl"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_matrix mass="0.0001"/>
+    </link>
+    <link name="${prefix}link_2_l">
+        <visual>
+            <geometry>
+                <mesh filename="package://motoman_gp7_support/meshes/visual/gp7_link_2_l.stl"/>
+            </geometry>
+            <material name="yaskawa_blue"/>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://motoman_gp7_support/meshes/collision/gp7_link_2_l.stl"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_matrix mass="0.0001"/>
+    </link>
+    <link name="${prefix}link_3_u">
+        <visual>
+            <geometry>
+                <mesh filename="package://motoman_gp7_support/meshes/visual/gp7_link_3_u.stl"/>
+            </geometry>
+            <material name="yaskawa_blue"/>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://motoman_gp7_support/meshes/collision/gp7_link_3_u.stl"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_matrix mass="0.0001"/>
+    </link>
+    <link name="${prefix}link_4_r">
+        <visual>
+            <geometry>
+                <mesh filename="package://motoman_gp7_support/meshes/visual/gp7_link_4_r.stl"/>
+            </geometry>
+            <material name="yaskawa_blue"/>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://motoman_gp7_support/meshes/collision/gp7_link_4_r.stl"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_matrix mass="0.0001"/>
+    </link>
+    <link name="${prefix}link_5_b">
+        <visual>
+            <geometry>
+                <mesh filename="package://motoman_gp7_support/meshes/visual/gp7_link_5_b.stl"/>
+            </geometry>
+            <material name="yaskawa_blue"/>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://motoman_gp7_support/meshes/collision/gp7_link_5_b.stl"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_matrix mass="0.0001"/>
+    </link>
+    <link name="${prefix}link_6_t">
+        <visual>
+            <geometry>
+                <mesh filename="package://motoman_gp7_support/meshes/visual/gp7_link_6_t.stl"/>
+            </geometry>
+            <material name="yaskawa_blue"/>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://motoman_gp7_support/meshes/collision/gp7_link_6_t.stl"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_matrix mass="0.0001"/>
+    </link>
+    <link name="${prefix}tool0"/>
+    <!-- end of link list -->
+
+    <!-- joint list -->
+    <joint name="${prefix}joint_1_s" type="revolute">
+        <parent link="${prefix}base_link"/>
+        <child link="${prefix}link_1_s"/>
+        <origin xyz="0 0 0.330" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+        <limit lower="-2.9670" upper="2.9670" effort="212.66" velocity="6.5448"/>
+    </joint>
+    <joint name="${prefix}joint_2_l" type="revolute">
+        <parent link="${prefix}link_1_s"/>
+        <child link="${prefix}link_2_l"/>
+        <origin xyz="0.040 0 0" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+        <limit lower="-1.1344" upper="2.5307" effort="205.80" velocity="5.4977"/>
+    </joint>
+    <joint name="${prefix}joint_3_u" type="revolute">
+        <parent link="${prefix}link_2_l"/>
+        <child link="${prefix}link_3_u"/>
+        <origin xyz="0 0 0.445" rpy="0 0 0" />
+        <axis xyz="0 -1 0" />
+        <limit lower="-1.2217" upper="3.3161" effort="106.82" velocity="7.1558"/>
+    </joint>
+    <joint name="${prefix}joint_4_r" type="revolute">
+        <parent link="${prefix}link_3_u"/>
+        <child link="${prefix}link_4_r"/>
+        <origin xyz="0.440 0 0.040" rpy="0 0 0" />
+        <axis xyz="-1 0 0" />
+        <limit lower="-3.3161" upper="3.3161" effort="55.86" velocity="9.5993"/>
+    </joint>
+    <joint name="${prefix}joint_5_b" type="revolute">
+        <parent link="${prefix}link_4_r"/>
+        <child link="${prefix}link_5_b"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 -1 0" />
+        <limit lower="-2.3561" upper="2.3561" effort="32.68" velocity="9.5993"/>
+    </joint>
+    <joint name="${prefix}joint_6_t" type="revolute">
+        <parent link="${prefix}link_5_b"/>
+        <child link="${prefix}link_6_t"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="-1 0 0" />
+        <limit lower="-6.2944" upper="6.2944" effort="22.54" velocity="17.4845"/>
+    </joint>
+    <joint name="${prefix}joint_6_t-tool0" type="fixed">
+        <origin xyz="0.080 0 0" rpy="3.1415926 -1.570796 0"/>
+        <parent link="${prefix}link_6_t"/>
+        <child link="${prefix}tool0"/>
+    </joint>
+    <!-- end of joint list -->
+
+    <!-- ROS base_link to Robot Manufacturer World Coordinates transform -->
+    <!--<link name="${prefix}base" />
+    <joint name="${prefix}base_link-base" type="fixed">
+        <origin xyz="0 0 0.330" rpy="0 0 0"/>
+        <parent link="${prefix}base_link"/>
+        <child link="${prefix}base"/>
+    </joint>-->
+
+    <!-- ROS base_link to Robot Manufacturer World Coordinates transform -->
+    <link name="${prefix}world" />
+    <joint name="${prefix}world_base_link" type="fixed">
+        <parent link="${prefix}world"/>
+        <child link="${prefix}base_link"/>
+    </joint>
+
+
+
+    <!-- Add for end effector////////////////////////////////// -->
+    <!--<xacro:macro name="inertial_matrix" params="mass">
+      <inertial>
+     	  <mass value="${mass}" />
+          <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0" />
+      </inertial>
+    </xacro:macro>-->
+
+    <property name="M_PI" value="3.14159"/>
+    <!-- Gripper link properties (m)-->
+    <property name="gripper_t0_width" value="0.008" />
+    <property name="gripper_t0_len" value="0.09" />
+    <material name="Red">
+        <color rgba="0.8 0.0 0.0 1.0"/>
+    </material>
+
+    <joint name="${prefix}joint_t0_link" type="fixed">
+        <parent link="${prefix}tool0"/>
+        <child link="${prefix}gripper_t0_link"/>
+        <axis xyz="1 0 0"/>
+        <!--<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />-->
+        <origin xyz="0.0 0.0 0.0" rpy="${M_PI} -${M_PI/2} 0" />
+    </joint>
+
+    <link name="${prefix}gripper_t0_link">
+       <visual>
+         <origin xyz="${gripper_t0_len/2} 0 0" rpy="0 ${M_PI/2} 0" />
+         <geometry>
+               <cylinder radius="${gripper_t0_width}" length="${gripper_t0_len}"/>
+         </geometry>
+         <material name="yaskawa_blue"/>
+       </visual>
+       <collision>
+           <origin xyz="${gripper_t0_len/2} 0 0" rpy="0 ${M_PI/2} 0" />
+            <geometry>
+                 <cylinder radius="${gripper_t0_width}" length="${gripper_t0_len}"/>
+            </geometry>
+       </collision>
+	   <xacro:inertial_matrix mass="0.0001"/>
+    </link>
+
+    <joint name="${prefix}t0_link_tcp" type="fixed">
+        <parent link="${prefix}gripper_t0_link"/>
+        <child link="${prefix}gripper_t0_tcp"/>
+        <axis xyz="1 0 0"/>
+        <origin xyz="${gripper_t0_len} 0.0 0.0" rpy="0.0 0.0 0.0" />
+    </joint>
+
+    <link name="${prefix}gripper_t0_tcp">
+      <visual>
+          <geometry>
+                <cylinder radius="0.0001" length="0.0001"/>
+          </geometry>
+	      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+          <material name="yaskawa_blue" />
+      </visual>
+      <xacro:inertial_matrix mass="0.0001"/>
+      <collision>
+          <geometry>
+                <cylinder radius="0.0001" length="0.0001"/>
+          </geometry>
+  	  <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      </collision>
+    </link>
+
+
+
+    <xacro:macro name="my_transmission" params="my_tran joint_name actuator_name">
+         <transmission name="${my_tran}">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${joint_name}">
+              <!--<hardwareInterface>EffortJointInterface</hardwareInterface>-->
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${actuator_name}">
+              <!--<hardwareInterface>EffortJointInterface</hardwareInterface>-->
+              <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+              <mechanicalReduction>1</mechanicalReduction>
+              <motorTorqueConstant>1</motorTorqueConstant>
+            </actuator>
+         </transmission>
+    </xacro:macro>
+
+    <xacro:my_transmission my_tran="${prefix}tran1" joint_name="${prefix}joint_1_s" actuator_name="${prefix}motor1"/>
+    <xacro:my_transmission my_tran="${prefix}tran2" joint_name="${prefix}joint_2_l" actuator_name="${prefix}motor2"/>
+    <xacro:my_transmission my_tran="${prefix}tran3" joint_name="${prefix}joint_3_u" actuator_name="${prefix}motor3"/>
+    <xacro:my_transmission my_tran="${prefix}tran4" joint_name="${prefix}joint_4_r" actuator_name="${prefix}motor4"/>
+    <xacro:my_transmission my_tran="${prefix}tran5" joint_name="${prefix}joint_5_b" actuator_name="${prefix}motor5"/>
+    <xacro:my_transmission my_tran="${prefix}tran6" joint_name="${prefix}joint_6_t" actuator_name="${prefix}motor6"/>
+
+    <gazebo>
+        <plugin name="gazebo_ros_congtrol" filename="libgazebo_ros_control.so">
+            <robotNamespace>${prefix}gp7_yaskawa</robotNamespace>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+            <legacyModeNS>true</legacyModeNS>
+        </plugin>
+    </gazebo>
+
+    </xacro:macro>
+</robot>
+
