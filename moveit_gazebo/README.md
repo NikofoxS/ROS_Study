@@ -15,7 +15,7 @@ mkdir -p gp7gazebo_ws/src/
 cd gp7gazebo_ws/
 catkin_make
 ```  
-Download this package and copy package to folder "gp7gazebo_ws/src/":  
+Download this package and copy the package to "gp7gazebo_ws/src/":  
 ```
 cp -r moveit_gazebo gp7gazebo_ws/src/
 ```  
