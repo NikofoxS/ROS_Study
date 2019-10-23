@@ -1,7 +1,7 @@
 # moveit_gazebo  
 ## Introduction
 Manipulator simulation based on [MoveIt](https://moveit.ros.org/), [ros_control](http://wiki.ros.org/ros_control) and [Gazebo](http://gazebosim.org/).  
-The development environment: Ubuntu16.04; ROS_Kinetic Kame; gazebo7  
+Test environment: Ubuntu16.04; ROS_Kinetic Kame; gazebo7  
 Simulation interface with rviz and gazebo:  
 ![gp7_gazebo.gif](https://raw.githubusercontent.com/foxchys/ROS_Study/master/moveit_gazebo/pictures/gp7_gazebo.gif)  
 The robot used in this example is [yaskawa_motoman_gp7](https://www.motoman.com/en-us/products/robots/industrial/assembly-handling/gp-series/gp7).  
