@@ -1,0 +1,12 @@
+<launch>
+   <arg name="robot_group_name" default="gp7_arm" />
+   <arg name="reset_pose_name" default="gp7_pose_reset" />
+   <arg name="PlanningTime" default="10" />
+   <arg name="max_speed_joint" default="0.1" />
+
+   <node name="motoman_moveit_cpp" pkg="robot_work" type="motoman_moveit_cpp" respawn="false"
+   args="$(arg robot_group_name) $(arg reset_pose_name) $(arg PlanningTime) $(arg max_speed_joint)" output="screen">
+       <remap from="/joint_states" to="/gp7_yaskawa/joint_states" />
+   </node>
+
+</launch>
