@@ -1,5 +1,5 @@
 //by foxchys chy_s@outlook.com
-//Some test of moveit_api
+
 
 #include<boost/thread/thread.hpp>
 
