@@ -32,7 +32,7 @@ source devel/setup.bash
 rospack profile
 roslaunch robot_work start_robot_table_cube.launch
 ```  
-Something about the use of [moveit_api_cpp](http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/move_group_interface/move_group_interface_tutorial.html#getting-started):  
+Something about [moveit_cpp_api](http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/move_group_interface/move_group_interface_tutorial.html#getting-started):  
 ```
 roslauch robot_work motoman_moveit_api_test.launch
 ```  
