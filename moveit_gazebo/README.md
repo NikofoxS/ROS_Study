@@ -6,7 +6,7 @@ Simulation interface with rviz and gazebo:
 ![gp7_gazebo.gif](https://raw.githubusercontent.com/foxchys/ROS_Study/master/moveit_gazebo/pictures/gp7_gazebo.gif)  
 The robot used in this example is [yaskawa_motoman_gp7](https://www.motoman.com/en-us/products/robots/industrial/assembly-handling/gp-series/gp7).  
 The original manipulator model can be downloaded at [motoman_gp7_support](https://github.com/ros-industrial/motoman/tree/kinetic-devel/motoman_gp7_support).  
-This package contains the implementation of yaskawa_motoman_gp7 push block:  
+Pushing a cube with yaskawa_motoman_gp7:  
 ![gp7_push.gif](https://raw.githubusercontent.com/foxchys/ROS_Study/master/moveit_gazebo/pictures/gp7_push.gif)  
 ## Usage  
 Creat a ros_workspace:  
@@ -32,7 +32,7 @@ source devel/setup.bash
 rospack profile
 roslaunch robot_work start_robot_table_cube.launch
 ```  
-Something about the use of [moveit_api_cpp](http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/move_group_interface/move_group_interface_tutorial.html#getting-started):  
+Something about [moveit_cpp_api](http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/move_group_interface/move_group_interface_tutorial.html#getting-started):  
 ```
 roslauch robot_work motoman_moveit_api_test.launch
 ```  
