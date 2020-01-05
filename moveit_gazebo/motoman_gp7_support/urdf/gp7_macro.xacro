@@ -281,6 +281,30 @@
         </plugin>
     </gazebo>
 
+    <!--<gazebo reference="${prefix}joint_6_t-tool0">
+       <disableFixedJointLumping>true</disableFixedJointLumping>
+    </gazebo>-->
+    <!--<gazebo reference="${prefix}joint_t0_link">
+       <disableFixedJointLumping>true</disableFixedJointLumping>
+    </gazebo>-->
+    <gazebo reference="${prefix}t0_link_tcp">
+       <disableFixedJointLumping>true</disableFixedJointLumping>
+    </gazebo>
+
+    <!--publish the link pose in gazebo --> 
+    <gazebo>
+     <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+       <alwaysOn>true</alwaysOn>
+       <updateRate>50.0</updateRate>
+       <bodyName>${prefix}gripper_t0_tcp</bodyName>
+       <topicName>gripper_link_tcp/state</topicName>
+       <gaussianNoise>0.01</gaussianNoise>
+       <frameName>world</frameName>
+       <xyzOffsets>0 0 0</xyzOffsets>
+       <rpyOffsets>0 0 0</rpyOffsets>
+     </plugin>
+    </gazebo>
+
     </xacro:macro>
 </robot>
 
