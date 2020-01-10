@@ -13,7 +13,15 @@ gp7_yaskawa:
     #It is better not to put any PID in the yaml file rather than putting the wrong value. 
     #To find suitable PID values use:http://wiki.ros.org/dynamic_reconfigure/Tutorials
     #https://answers.ros.org/question/293830/what-is-the-fix-for-no-p-gain-specified-for-pid-namespace-gazebo_ros_controlpid_gainsback_right_wheel_joint-ros-melodic/
-
+  gp7_joint_group_position_controller:
+    type: "position_controllers/JointGroupPositionController"
+    joints:
+      - joint_1_s
+      - joint_2_l
+      - joint_3_u
+      - joint_4_r
+      - joint_5_b
+      - joint_6_t
     # gains:
     #   joint_1_s:   {p: 40.0, i: 0.0, d: 0.1, i_clamp: 0.0}
     #   joint_2_l:   {p: 40.0, i: 0.0, d: 0.1, i_clamp: 0.0}

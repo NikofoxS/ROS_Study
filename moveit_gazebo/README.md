@@ -36,8 +36,36 @@ Something about [moveit_cpp_api](http://docs.ros.org/kinetic/api/moveit_tutorial
 ```
 roslauch robot_work motoman_moveit_api_test.launch
 ```  
+Jog mode based on [moveit_jog_arm](https://github.com/ros-planning/moveit/tree/master/moveit_experimental/moveit_jog_arm):  
 
-That's all.  
+1.  sikp `roslaunch robot_work start_robot_table_cube.launch`
+2. `roslaunch robot_work gp7_jog_teach.launch`
+
+Single joint jog:  
+```
+rostopic pub -1 /jog_server/joint_delta_jog_cmds control_msgs/JointJog "header: auto
+joint_names: ['joint_5_b']
+displacements: [0]
+velocities: [-0.3]
+duration: 0.0"
+```  
+![gp7_joint_jog.gif](https://raw.githubusercontent.com/foxchys/ROS_Study/master/moveit_gazebo/pictures/gp7_joint_jog.gif)  
+End-effector jog:  
+```
+rostopic pub -r 100 /jog_server/delta_jog_cmds geometry_msgs/TwistStamped "header: auto
+twist:
+  linear:
+    x: 0.0
+    y: 0.00
+    z: -0.1
+  angular:
+    x: 0.0
+    y: 0.0
+    z: 0.0"
+```  
+![gp7_jog_ef.gif](https://raw.githubusercontent.com/foxchys/ROS_Study/master/moveit_gazebo/pictures/gp7_jog_ef.gif)  
+
+To be continued.  
 
 ## Postscript  
 "No p gain specified for pid" is not an ERROR.For details [click](https://answers.ros.org/question/293830/what-is-the-fix-for-no-p-gain-specified-for-pid-namespace-gazebo_ros_controlpid_gainsback_right_wheel_joint-ros-melodic/).  
