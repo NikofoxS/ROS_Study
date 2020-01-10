@@ -64,6 +64,14 @@ twist:
     z: 0.0"
 ```  
 ![gp7_jog_ef.gif](https://raw.githubusercontent.com/foxchys/ROS_Study/master/moveit_gazebo/pictures/gp7_jog_ef.gif)  
+Switch Controller：  
+```
+rosservice call /gp7_yaskawa/controller_manager/switch_controller "start_controllers:
+- 'gp7_yaskawa_controller'
+stop_controllers:
+- 'gp7_joint_group_position_controller'
+strictness: 2"
+```  
 
 To be continued.  
 
