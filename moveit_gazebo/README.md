@@ -36,7 +36,7 @@ Something about [moveit_cpp_api](http://docs.ros.org/kinetic/api/moveit_tutorial
 ```
 roslauch robot_work motoman_moveit_api_test.launch
 ```  
-Jog mode based on [moveit_jog_arm](https://github.com/ros-planning/moveit/tree/master/moveit_experimental/moveit_jog_arm):  
+Jog based on [moveit_jog_arm](https://github.com/ros-planning/moveit/tree/master/moveit_experimental/moveit_jog_arm):  
 
 1.  sikp `roslaunch robot_work start_robot_table_cube.launch`
 2. `roslaunch robot_work gp7_jog_teach.launch`
